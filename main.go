@@ -5,17 +5,23 @@ import (
 	"net/http"
 )
 
+const portNumber = ":8080"
+
+// Home - home page handler
+func Home(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// About - about page handler
+func About(w http.ResponseWriter, r *http.Request) {
+
+}
+
 func main() {
-	// Регистрация обработчик для пути "/"
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		n, err := fmt.Fprint(w, "Hello world!")
-		if err != nil {
-			fmt.Println(err)
-		}
+	// Handlers registration
+	http.HandleFunc("/", Home)
+	http.HandleFunc("/about", About)
 
-		fmt.Println(fmt.Sprintf("Bytes writen: %d", n))
-	})
-
-	// Запуск web-сервера
-	_ = http.ListenAndServe(":8080", nil)
+	// Start web-server
+	_ = http.ListenAndServe(portNumber, nil)
 }
