@@ -2,4 +2,4 @@
 
 This is repository for Udemy learning project for bookings and reservation.
 
-- Built in Go versuin 1.18
+- Built in Go version 1.18
